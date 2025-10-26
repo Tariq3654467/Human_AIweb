@@ -1,20 +1,59 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 import ScrollIndicator from '@/components/ScrollIndicator';
 import { StaggeredText, GradientText } from '@/components/FloatingText';
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVideoReady, setIsVideoReady] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Try to play the video immediately
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setIsVideoReady(true);
+        })
+        .catch(() => {
+          // Auto-play was prevented, handle it silently
+        });
+    }
+
+    // Ensure video is loaded and ready
+    const handleLoadedData = () => {
+      setIsVideoReady(true);
+    };
+
+    video.addEventListener('loadeddata', handleLoadedData);
+    
+    return () => {
+      video.removeEventListener('loadeddata', handleLoadedData);
+    };
+  }, []);
+
   return (
     <section className="dark-section min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full z-0">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
+          preload="auto"
           className="w-full h-full object-cover"
+          style={{ 
+            minHeight: '100%',
+            minWidth: '100%',
+            objectFit: 'cover' 
+          }}
         >
           <source src="/videos/video1.mp4" type="video/mp4" />
         </video>
