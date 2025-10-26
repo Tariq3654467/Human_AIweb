@@ -18,7 +18,7 @@ export default function Strategic() {
               Strategic Thinkers Stuck in Tactical Work
             </h2>
             <p className="text-lg text-charcoal-grey leading-relaxed">
-              You're hired for strategy but buried in execution. Brand OS automates tactical work so you focus on what matters: 
+              You&apos;re hired for strategy but buried in execution. Brand OS automates tactical work so you focus on what matters: 
               strategic thinking, not executing.
             </p>
           </div>

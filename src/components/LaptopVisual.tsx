@@ -1,8 +1,28 @@
+/* eslint-disable react-hooks/purity */
 'use client';
 
 import { motion } from 'framer-motion';
+import { useMemo } from 'react';
 
 export default function LaptopVisual() {
+  // Pre-generate random values to avoid calling Math.random during render
+  const randomDataPoints = useMemo(() => 
+    Array.from({ length: 20 }).map(() => ({
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      duration: 2 + Math.random(),
+      delay: Math.random() * 2,
+    }))
+  , []);
+
+  const randomParticles = useMemo(() =>
+    Array.from({ length: 15 }).map(() => ({
+      left: 10 + Math.random() * 80,
+      top: 10 + Math.random() * 80,
+      duration: 3 + Math.random() * 2,
+      delay: Math.random() * 2,
+    }))
+  , []);
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
       {/* Laptop Container */}
@@ -46,22 +66,22 @@ export default function LaptopVisual() {
                   </div>
                   
                   {/* Glowing Data Points */}
-                  {Array.from({ length: 20 }).map((_, i) => (
+                  {randomDataPoints.map((point, i) => (
                     <motion.div
                       key={i}
                       className="absolute w-2 h-2 bg-lime-green rounded-full"
                       style={{
-                        left: `${Math.random() * 100}%`,
-                        top: `${Math.random() * 100}%`,
+                        left: `${point.left}%`,
+                        top: `${point.top}%`,
                       }}
                       animate={{
                         opacity: [0.3, 1, 0.3],
                         scale: [1, 1.5, 1],
                       }}
                       transition={{
-                        duration: 2 + Math.random(),
+                        duration: point.duration,
                         repeat: Infinity,
-                        delay: Math.random() * 2,
+                        delay: point.delay,
                       }}
                     />
                   ))}
@@ -110,22 +130,22 @@ export default function LaptopVisual() {
           </motion.div>
           
           {/* Floating Particles Around Laptop */}
-          {Array.from({ length: 15 }).map((_, i) => (
+          {randomParticles.map((particle, i) => (
             <motion.div
               key={i}
               className="absolute w-1 h-1 bg-celtic-blue rounded-full"
               style={{
-                left: `${10 + Math.random() * 80}%`,
-                top: `${10 + Math.random() * 80}%`,
+                left: `${particle.left}%`,
+                top: `${particle.top}%`,
               }}
               animate={{
                 y: [0, -30, 0],
                 opacity: [0.5, 1, 0.5],
               }}
               transition={{
-                duration: 3 + Math.random() * 2,
+                duration: particle.duration,
                 repeat: Infinity,
-                delay: Math.random() * 2,
+                delay: particle.delay,
               }}
             />
           ))}

@@ -2,7 +2,6 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { ShimmerText } from '@/components/FloatingText';
 import ParallaxText from '@/components/ParallaxText';
 import ZoomFade from '@/components/ZoomFade';
 
@@ -41,7 +40,7 @@ export default function ProblemSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-            The Problem: Marketing's{' '}
+            The Problem: Marketing&apos;s{' '}
             <motion.span 
               className="text-celtic-blue inline-block"
               animate={{ 
@@ -78,7 +77,7 @@ export default function ProblemSection() {
             >
               10x
             </motion.span>
-            , but budgets haven't. Marketing teams are stretched thin, 
+            , but budgets haven&apos;t. Marketing teams are stretched thin, 
             brand consistency suffers, and C-suite demands ROI while complexity grows.{' '}
             <motion.span 
               className="font-semibold text-celtic-blue inline-block"
@@ -91,7 +90,7 @@ export default function ProblemSection() {
                 ease: 'easeInOut'
               }}
             >
-              There's a better way.
+              There&apos;s a better way.
             </motion.span>
           </motion.p>
                 </motion.div>

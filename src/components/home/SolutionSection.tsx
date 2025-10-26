@@ -2,7 +2,6 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import AnimatedBackground from '@/components/AnimatedBackground';
 import GlobeBackground from '@/components/GlobeBackground';
 import { ShimmerText } from '@/components/FloatingText';
 import ZoomFade from '@/components/ZoomFade';
@@ -96,8 +95,8 @@ export default function SolutionSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Brand OS isn't another tool promising 10-20% gains. It's the{' '}
-            <ShimmerText className="text-lime-green font-semibold">'Reshape' platform</ShimmerText>{' '}
+            Brand OS isn&apos;t another tool promising 10-20% gains. It&apos;s the{' '}
+            <ShimmerText className="text-lime-green font-semibold">&apos;Reshape&apos; platform</ShimmerText>{' '}
             BCG identifies—delivering{' '}
             <motion.span 
               className="text-lime-green font-semibold inline-block"
@@ -133,7 +132,7 @@ export default function SolutionSection() {
                 ease: 'easeInOut'
               }}
             >
-              'Ground Truth'
+              &apos;Ground Truth&apos;
             </motion.span>
             —a single intelligence source powering always-on-brand content generation, continuous competitive monitoring, 
             and real-time performance insights.

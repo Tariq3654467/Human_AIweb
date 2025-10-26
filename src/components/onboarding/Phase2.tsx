@@ -39,7 +39,7 @@ export default function Phase2() {
             
             <div className="bg-charcoal-grey p-6 rounded-lg border-l-4 border-jelly-bean">
               <h3 className="font-semibold text-off-white mb-2">Session History</h3>
-              <p className="text-chinese-silver">Backlog of all project 'sessions'</p>
+              <p className="text-chinese-silver">Backlog of all project &apos;sessions&apos;</p>
             </div>
           </div>
           

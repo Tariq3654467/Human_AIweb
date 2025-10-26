@@ -18,7 +18,7 @@ export default function VP() {
               VPs Drowning in Content Demands
             </h2>
             <p className="text-lg text-chinese-silver leading-relaxed">
-              Channels exploded, budgets didn't. Brand OS collapses content costs through human creativity + AI precision, 
+              Channels exploded, budgets didn&apos;t. Brand OS collapses content costs through human creativity + AI precision, 
               generating weeks of on-brand content in hours.
             </p>
           </div>

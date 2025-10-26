@@ -18,7 +18,7 @@ export default function CMO() {
               CMOs Leading In-Housing
             </h2>
             <p className="text-lg text-charcoal-grey leading-relaxed">
-              You're set on bringing the brand in-house, but the infrastructure is missing. Brand OS transforms 
+              You&apos;re set on bringing the brand in-house, but the infrastructure is missing. Brand OS transforms 
               static guidelines into dynamic systems, codifying strategy and ensuring consistency—making in-housing sustainable.
             </p>
           </div>

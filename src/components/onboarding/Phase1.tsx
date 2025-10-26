@@ -29,7 +29,7 @@ export default function Phase1() {
           <div className="space-y-4 mb-6">
             <div className="bg-white p-6 rounded-lg border-l-4 border-celtic-blue">
               <h3 className="font-semibold text-bg-black mb-2">Outside-In Brand Perception Audit</h3>
-              <p className="text-charcoal-grey">AI agents analyze your complete digital footprint to uncover your 'Emergent Brand'</p>
+              <p className="text-charcoal-grey">AI agents analyze your complete digital footprint to uncover your &apos;Emergent Brand&apos;</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg border-l-4 border-jelly-bean">

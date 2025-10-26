@@ -17,7 +17,7 @@ export default function Approach() {
           <div className="bg-charcoal-grey p-8 rounded-lg border-l-4 border-lime-green">
             <p className="text-lg text-chinese-silver leading-relaxed">
               The alchemy of human creativity + AI precision creates what neither can achieve alone: brands that are both 
-              deeply authentic and endlessly scalable. This is BCG's <span className="text-lime-green font-semibold">'Reshape' transformation</span>—50%+ 
+              deeply authentic and endlessly scalable. This is BCG&apos;s <span className="text-lime-green font-semibold">&apos;Reshape&apos; transformation</span>—50%+ 
               improvement by re-engineering how brand management works.
             </p>
           </div>

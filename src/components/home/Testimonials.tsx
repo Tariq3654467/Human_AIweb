@@ -119,7 +119,7 @@ export default function Testimonials() {
                       <p className="text-chinese-silver text-sm">{client.company}</p>
                     </div>
                   </div>
-                  <p className="text-white italic">"{client.quote}"</p>
+                  <p className="text-white italic">&ldquo;{client.quote}&rdquo;</p>
                 </div>
               </motion.div>
             ))}

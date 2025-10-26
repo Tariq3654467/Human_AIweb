@@ -1,11 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import AnimatedBackground from '@/components/AnimatedBackground';
-import GlobeBackground from '@/components/GlobeBackground';
-import LaptopVisual from '@/components/LaptopVisual';
 import ScrollIndicator from '@/components/ScrollIndicator';
-import { StaggeredText, GradientText, ShimmerText } from '@/components/FloatingText';
+import { StaggeredText, GradientText } from '@/components/FloatingText';
 
 export default function Hero() {
   return (
