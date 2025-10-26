@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Humanbrand AI – Brand OS Website
+
+A modern, responsive website for Humanbrand AI's Brand OS platform, built with Next.js, TypeScript, and Tailwind CSS.
+
+## Features
+
+- **Modern Design**: Inspired by Palantir's clean, professional aesthetic
+- **Responsive**: Fully responsive design that works on all devices
+- **Performance**: Optimized with Next.js 15 App Router
+- **Animations**: Smooth animations powered by Framer Motion
+- **Type Safety**: Full TypeScript support
+
+## Color Scheme
+
+- **Accent Colors**:
+  - Lime Green: `#8FFF00`
+  - Celtic Blue: `#3175D4`image.png
+  - Jelly Bean: `#DA6E44`
+
+- **Background Colors**:
+  - Black: `#222428`
+  - Off White: `#FAFAFA`
+  - Chinese Silver: `#CCCCCC`
+  - Charcoal Grey: `#333333`
+
+## Pages
+
+1. **Homepage** (`/`) - Hero section, problem statement, solution overview, and how it works
+2. **Onboarding** (`/onboarding`) - Four-phase journey from chaos to command
+3. **Who Benefits** (`/benefits`) - Target audience and their specific challenges
+4. **What to Expect** (`/expect`) - Partnership process and expected outcomes
+5. **About Us** (`/about`) - Mission, vision, approach, and core values
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js 15** - React framework with App Router
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Animation library
+- **Geist Sans** - Modern font family
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+humanbrand-ai/
+├── src/
+│   ├── app/                    # Next.js app directory
+│   │   ├── page.tsx            # Homepage
+│   │   ├── onboarding/         # Onboarding page
+│   │   ├── benefits/           # Benefits page
+│   │   ├── expect/             # What to expect page
+│   │   ├── about/              # About page
+│   │   ├── layout.tsx          # Root layout
+│   │   └── globals.css         # Global styles
+│   └── components/             # React components
+│       ├── Navbar.tsx          # Navigation bar
+│       ├── Footer.tsx          # Footer
+│       ├── home/               # Homepage components
+│       ├── onboarding/         # Onboarding components
+│       ├── benefits/           # Benefits components
+│       ├── expect/             # Expect components
+│       └── about/              # About components
+├── public/                     # Static assets
+└── tailwind.config.ts          # Tailwind configuration
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The development server runs on port 3000 by default. Hot reloading is enabled for fast development.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2024 Humanbrand AI. All rights reserved.
