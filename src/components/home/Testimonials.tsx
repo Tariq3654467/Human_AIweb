@@ -86,14 +86,14 @@ export default function Testimonials() {
         </ZoomFade>
 
         {/* Auto-scrolling Testimonials Carousel */}
-        <div className="mt-12 overflow-hidden relative">
+        <div className="mt-8 sm:mt-12 overflow-hidden relative">
           {/* Gradient overlays for fade effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent z-20 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0a0a0a] to-transparent z-20 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent z-20 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#0a0a0a] to-transparent z-20 pointer-events-none" />
           
           <motion.div 
             ref={containerRef}
-            className="flex gap-6"
+            className="flex gap-4 sm:gap-6"
             animate={{
               x: ['0%', `-${(100 / duplicatedClients.length) * clients.length}%`],
             }}
@@ -106,10 +106,10 @@ export default function Testimonials() {
             {duplicatedClients.map((client, index) => (
               <motion.div
                 key={index}
-                className="flex-shrink-0 w-[350px]"
+                className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[350px]"
                 whileHover={{ scale: 1.05, y: -5 }}
               >
-                <div className="bg-white/10 backdrop-blur-sm border border-lime-green/30 rounded-lg p-6 h-full shadow-lg hover:border-lime-green/60 transition-all">
+                <div className="bg-white/10 backdrop-blur-sm border border-lime-green/30 rounded-lg p-4 sm:p-6 h-full shadow-lg hover:border-lime-green/60 transition-all">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-lime-green/30 rounded-full flex items-center justify-center text-2xl border-2 border-lime-green/50">
                       {client.avatar}

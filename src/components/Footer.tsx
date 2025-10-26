@@ -11,8 +11,8 @@ export default function Footer() {
         <div className="particle-background" />
       </div>
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8">
           <motion.div 
             className="col-span-1 md:col-span-2"
             initial={{ opacity: 0, y: 20 }}
@@ -20,11 +20,11 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-xl font-bold text-off-white mb-4">Humanbrand AI</h3>
-            <p className="text-chinese-silver mb-4">
+            <h3 className="text-lg sm:text-xl font-bold text-off-white mb-3 sm:mb-4">Humanbrand AI</h3>
+            <p className="text-sm sm:text-base text-chinese-silver mb-3 sm:mb-4">
               Empowering brand leaders with in-house control through AI-powered infrastructure.
             </p>
-            <p className="text-chinese-silver text-sm">
+            <p className="text-xs sm:text-sm text-chinese-silver">
               © 2024 Humanbrand AI. All rights reserved.
             </p>
           </motion.div>

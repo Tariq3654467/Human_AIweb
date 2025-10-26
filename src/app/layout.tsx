@@ -17,6 +17,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Humanbrand AI – Brand OS | Transform Marketing Chaos into Command",
   description: "AI-Powered Brand OS for Data-Driven Command. Transform marketing chaos into operational command through the alchemy of human creativity and AI precision.",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
 };
 
 export default function RootLayout({

@@ -29,10 +29,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="text-xl font-bold text-white hover:text-lime-green transition-colors">
-            <span className="flex items-center gap-2">
+          <Link href="/" className="text-base sm:text-lg md:text-xl font-bold text-white hover:text-lime-green transition-colors">
+            <span className="flex items-center gap-1 sm:gap-2">
               <span className="text-lime-green">✨</span>
-              Humanbrand AI
+              <span className="hidden sm:inline">Humanbrand AI</span>
+              <span className="sm:hidden">HBAI</span>
             </span>
           </Link>
           
