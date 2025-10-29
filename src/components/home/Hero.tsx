@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import ScrollIndicator from '@/components/ScrollIndicator';
-import { StaggeredText, GradientText } from '@/components/FloatingText';
+import { StaggeredText } from '@/components/FloatingText';
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);

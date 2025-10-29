@@ -21,7 +21,7 @@ export default function Navbar() {
       {/* Top Banner */}
       {showBanner && (
         <div className="fixed top-0 left-0 right-0 z-[110] bg-white border-b border-border text-black text-sm py-2 px-4 flex items-center justify-between">
-          <span className="flex-1 text-center">Read CEO's Letter to Shareholders</span>
+          <span className="flex-1 text-center">Read CEO&apos;s Letter to Shareholders</span>
           <button
             onClick={() => setShowBanner(false)}
             className="ml-4 hover:opacity-70 transition-opacity"
