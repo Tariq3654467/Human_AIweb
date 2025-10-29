@@ -15,7 +15,7 @@ export default function ProblemSection() {
   const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
   
   return (
-    <section ref={ref} className="bg-off-white py-20 relative overflow-hidden">
+    <section ref={ref} className="bg-white py-32 relative overflow-hidden">
       {/* Subtle background pattern */}
       <div 
         className="absolute inset-0 opacity-5"

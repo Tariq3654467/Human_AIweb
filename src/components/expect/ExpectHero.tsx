@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function ExpectHero() {
   return (
-    <section className="dark-section py-20 relative overflow-hidden">
+    <section className="bg-white py-20 relative overflow-hidden">
       {/* Background Image - planning and strategy */}
       <div 
         className="absolute inset-0 opacity-12"
@@ -16,8 +16,8 @@ export default function ExpectHero() {
         }}
       />
       
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/65" />
+      {/* Light overlay for white design */}
+      <div className="absolute inset-0 bg-white/70" />
       
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <motion.div
@@ -26,13 +26,13 @@ export default function ExpectHero() {
           transition={{ duration: 0.6 }}
           className="max-w-4xl"
         >
-          <h1 className="text-5xl md:text-6xl font-bold text-off-white mb-6 leading-tight">
-            What to <span className="text-lime-green">Expect</span>
+          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6 leading-tight">
+            What to <span className="text-secondary">Expect</span>
           </h1>
-          <p className="text-xl text-chinese-silver leading-relaxed">
+          <p className="text-xl text-secondary leading-relaxed">
             Transparent Partnership for Real Transformation
           </p>
-          <p className="text-lg text-chinese-silver mt-6 leading-relaxed">
+          <p className="text-lg text-secondary mt-6 leading-relaxed">
             Brand OS requires deep collaboration—the alchemy of your brand expertise and our AI infrastructure. 
             We communicate with unflinching honesty, sharing everything without jargon or hidden agendas.
           </p>

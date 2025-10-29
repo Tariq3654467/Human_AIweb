@@ -8,7 +8,7 @@ import CoreValues from '@/components/about/CoreValues';
 
 export default function AboutPage() {
   return (
-    <main className="mt-16">
+    <main className="mt-20 relative z-10">
       <AboutHero />
       <Mission />
       <Vision />

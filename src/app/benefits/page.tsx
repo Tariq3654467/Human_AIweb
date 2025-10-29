@@ -8,7 +8,7 @@ import IdealProfile from '@/components/benefits/IdealProfile';
 
 export default function BenefitsPage() {
   return (
-    <main className="mt-16">
+    <main className="mt-20 relative z-10">
       <BenefitsHero />
       <CMO />
       <VP />

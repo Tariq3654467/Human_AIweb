@@ -43,9 +43,9 @@ export default function Phase3() {
             </div>
           </div>
           
-          <div className="bg-charcoal-grey text-off-white p-6 rounded-lg">
+          <div className="bg-bg-light border border-border text-primary p-6 rounded-lg">
             <p className="font-semibold mb-2">Result:</p>
-            <p className="text-chinese-silver">
+            <p className="text-secondary">
               Data-driven command with quantifiable metrics, competitive positioning, and trend analysis.
             </p>
           </div>

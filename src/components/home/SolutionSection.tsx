@@ -16,10 +16,10 @@ export default function SolutionSection() {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
   
   return (
-    <section ref={ref} className="dark-section py-20 relative overflow-hidden">
+    <section ref={ref} className="bg-white py-20 relative overflow-hidden">
       {/* Background Image - AI transformation/neural networks representing command */}
       <motion.div 
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-15"
         style={{
           backgroundImage: 'url(https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1920&q=80)',
           backgroundSize: 'cover',
@@ -29,8 +29,8 @@ export default function SolutionSection() {
         }}
       />
       
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/75" />
+      {/* Light overlay for white design */}
+      <div className="absolute inset-0 bg-white/70" />
       
       {/* Subtle animated background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
@@ -52,7 +52,7 @@ export default function SolutionSection() {
             transition={{ duration: 0.6 }}
           >
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-off-white mb-6"
+            className="text-4xl md:text-5xl font-bold text-primary mb-6"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -89,7 +89,7 @@ export default function SolutionSection() {
             </motion.span>
           </motion.h2>
           <motion.p 
-            className="text-lg text-chinese-silver leading-relaxed mb-6"
+            className="text-lg text-secondary leading-relaxed mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -114,7 +114,7 @@ export default function SolutionSection() {
             by re-engineering your entire brand function.
           </motion.p>
           <motion.p 
-            className="text-lg text-chinese-silver leading-relaxed"
+            className="text-lg text-secondary leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

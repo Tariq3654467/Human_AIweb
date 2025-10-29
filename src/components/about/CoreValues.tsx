@@ -31,7 +31,7 @@ export default function CoreValues() {
   ];
 
   return (
-    <section className="dark-section py-20">
+    <section className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -40,14 +40,14 @@ export default function CoreValues() {
           transition={{ duration: 0.6 }}
           className="max-w-4xl"
         >
-          <h2 className="text-4xl font-bold text-off-white mb-12">Core Values</h2>
+          <h2 className="text-4xl font-bold text-primary mb-12">Core Values</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             {values.map((value, index) => {
               const borderColors = {
-                'lime-green': 'border-lime-green',
-                'celtic-blue': 'border-celtic-blue',
-                'jelly-bean': 'border-jelly-bean'
+                'lime-green': 'border-border',
+                'celtic-blue': 'border-border',
+                'jelly-bean': 'border-border'
               };
               
               return (
@@ -57,17 +57,17 @@ export default function CoreValues() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`bg-charcoal-grey p-6 rounded-lg border-l-4 ${borderColors[value.color as keyof typeof borderColors]}`}
+                  className={`bg-bg-light p-6 rounded-lg border-l-4 ${borderColors[value.color as keyof typeof borderColors]}`}
                 >
                   <div className="text-4xl mb-4">{value.icon}</div>
-                  <h3 className="text-xl font-semibold text-off-white mb-3">{value.title}</h3>
-                  <p className="text-chinese-silver">{value.description}</p>
+                  <h3 className="text-xl font-semibold text-primary mb-3">{value.title}</h3>
+                  <p className="text-secondary">{value.description}</p>
                 </motion.div>
               );
             })}
           </div>
           
-          <div className="bg-lime-green text-bg-black p-8 rounded-lg">
+          <div className="bg-bg-light border border-border text-primary p-8 rounded-lg">
             <p className="text-lg font-semibold leading-relaxed">
               We partner with visionary leaders who see brands as living, operational capabilities and are ready to win 
               in the era of human-AI collaboration.

@@ -5,14 +5,9 @@ import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
-    <footer className="dark-section border-t border-charcoal-grey relative overflow-hidden">
-      {/* Subtle background effect */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="particle-background" />
-      </div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8">
+    <footer className="bg-white border-t border-border relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-12">
           <motion.div 
             className="col-span-1 md:col-span-2"
             initial={{ opacity: 0, y: 20 }}
@@ -20,11 +15,11 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-lg sm:text-xl font-bold text-off-white mb-3 sm:mb-4">Humanbrand AI</h3>
-            <p className="text-sm sm:text-base text-chinese-silver mb-3 sm:mb-4">
+            <h3 className="text-lg sm:text-xl font-semibold text-primary mb-4">Humanbrand AI</h3>
+            <p className="text-sm sm:text-base text-secondary mb-4 leading-relaxed">
               Empowering brand leaders with in-house control through AI-powered infrastructure.
             </p>
-            <p className="text-xs sm:text-sm text-chinese-silver">
+            <p className="text-xs sm:text-sm text-tertiary">
               © 2024 Humanbrand AI. All rights reserved.
             </p>
           </motion.div>
@@ -35,11 +30,11 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h4 className="text-off-white font-semibold mb-4">Product</h4>
-            <ul className="space-y-2">
-              <li><Link href="/onboarding" className="text-chinese-silver hover:text-lime-green transition-colors">Onboarding</Link></li>
-              <li><Link href="/benefits" className="text-chinese-silver hover:text-lime-green transition-colors">Who Benefits</Link></li>
-              <li><Link href="/expect" className="text-chinese-silver hover:text-lime-green transition-colors">What to Expect</Link></li>
+            <h4 className="text-primary font-medium mb-4 text-sm">Product</h4>
+            <ul className="space-y-3">
+              <li><Link href="/onboarding" className="text-secondary hover:text-primary transition-colors text-sm">Onboarding</Link></li>
+              <li><Link href="/benefits" className="text-secondary hover:text-primary transition-colors text-sm">Who Benefits</Link></li>
+              <li><Link href="/expect" className="text-secondary hover:text-primary transition-colors text-sm">What to Expect</Link></li>
             </ul>
           </motion.div>
           
@@ -49,10 +44,10 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h4 className="text-off-white font-semibold mb-4">Company</h4>
-            <ul className="space-y-2">
-              <li><Link href="/about" className="text-chinese-silver hover:text-lime-green transition-colors">About Us</Link></li>
-              <li><a href="#contact" className="text-chinese-silver hover:text-lime-green transition-colors">Contact</a></li>
+            <h4 className="text-primary font-medium mb-4 text-sm">Company</h4>
+            <ul className="space-y-3">
+              <li><Link href="/about" className="text-secondary hover:text-primary transition-colors text-sm">About Us</Link></li>
+              <li><a href="#contact" className="text-secondary hover:text-primary transition-colors text-sm">Contact</a></li>
             </ul>
           </motion.div>
         </div>

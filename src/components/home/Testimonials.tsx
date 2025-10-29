@@ -57,7 +57,7 @@ export default function Testimonials() {
   const duplicatedClients = [...clients, ...clients];
   
   return (
-    <section ref={ref} className="dark-section py-20 relative overflow-hidden">
+    <section ref={ref} className="bg-white py-20 relative overflow-hidden">
       {/* Background Image - professional business environment */}
       <motion.div 
         className="absolute inset-0 opacity-12"
@@ -70,8 +70,8 @@ export default function Testimonials() {
         }}
       />
       
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/50" />
+      {/* Light overlay for white design */}
+      <div className="absolute inset-0 bg-white/70" />
       
       {/* Subtle background */}
       <div className="absolute inset-0 opacity-10">
@@ -80,7 +80,7 @@ export default function Testimonials() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <ZoomFade>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-12 text-center">
             Trusted by Leading Brands
           </h2>
         </ZoomFade>
@@ -88,8 +88,8 @@ export default function Testimonials() {
         {/* Auto-scrolling Testimonials Carousel */}
         <div className="mt-8 sm:mt-12 overflow-hidden relative">
           {/* Gradient overlays for fade effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent z-20 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#0a0a0a] to-transparent z-20 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
           
           <motion.div 
             ref={containerRef}
@@ -109,17 +109,17 @@ export default function Testimonials() {
                 className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[350px]"
                 whileHover={{ scale: 1.05, y: -5 }}
               >
-                <div className="bg-white/10 backdrop-blur-sm border border-lime-green/30 rounded-lg p-4 sm:p-6 h-full shadow-lg hover:border-lime-green/60 transition-all">
+                <div className="bg-white border border-border rounded-lg p-4 sm:p-6 h-full shadow-sm hover:shadow-lg transition-all">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-lime-green/30 rounded-full flex items-center justify-center text-2xl border-2 border-lime-green/50">
+                    <div className="w-12 h-12 bg-bg-light rounded-full flex items-center justify-center text-2xl border-2 border-border">
                       {client.avatar}
                     </div>
                     <div>
-                      <h4 className="text-white font-semibold">{client.name}</h4>
-                      <p className="text-chinese-silver text-sm">{client.company}</p>
+                      <h4 className="text-primary font-semibold">{client.name}</h4>
+                      <p className="text-secondary text-sm">{client.company}</p>
                     </div>
                   </div>
-                  <p className="text-white italic">&ldquo;{client.quote}&rdquo;</p>
+                  <p className="text-secondary italic">&ldquo;{client.quote}&rdquo;</p>
                 </div>
               </motion.div>
             ))}

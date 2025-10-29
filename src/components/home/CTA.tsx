@@ -14,7 +14,7 @@ export default function CTA() {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
   
   return (
-    <section ref={ref} id="contact" className="dark-section py-20 relative overflow-hidden">
+    <section ref={ref} id="contact" className="bg-white py-20 relative overflow-hidden">
       {/* Background Image - modern energetic workspace */}
       <motion.div 
         className="absolute inset-0 opacity-15"
@@ -27,8 +27,8 @@ export default function CTA() {
         }}
       />
       
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/70" />
+      {/* Light overlay for white design */}
+      <div className="absolute inset-0 bg-white/70" />
       
       {/* Globe Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
@@ -77,7 +77,7 @@ export default function CTA() {
           transition={{ duration: 0.6 }}
         >
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-off-white mb-6"
+            className="text-4xl md:text-5xl font-bold text-primary mb-6"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -86,7 +86,7 @@ export default function CTA() {
             Ready to Transform Your Brand?
           </motion.h2>
           <motion.p 
-            className="text-xl text-chinese-silver mb-12 leading-relaxed"
+            className="text-xl text-secondary mb-12 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -104,53 +104,19 @@ export default function CTA() {
           >
             <motion.a
               href="mailto:contact@humanbrand.ai"
-              whileHover={{ 
-                scale: 1.1, 
-                y: -4,
-                boxShadow: '0 20px 40px rgba(143, 255, 0, 0.4)'
-              }}
-              whileTap={{ scale: 0.95 }}
-              animate={{ 
-                boxShadow: [
-                  '0 0 20px rgba(143, 255, 0, 0.3)',
-                  '0 0 40px rgba(143, 255, 0, 0.6)',
-                  '0 0 20px rgba(143, 255, 0, 0.3)',
-                ]
-              }}
-              transition={{ 
-                duration: 2,
-                repeat: Infinity,
-                ease: 'easeInOut'
-              }}
-              className="px-8 py-4 bg-lime-green text-bg-black rounded-md hover:bg-opacity-90 transition-all font-semibold text-lg relative overflow-hidden group"
+              whileHover={{ opacity: 0.9, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-8 py-4 bg-black text-white rounded-sm transition-all font-semibold text-lg"
             >
-              <span className="relative z-10">Get Started</span>
-              <motion.div
-                className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20"
-                whileHover={{ scale: 1.2 }}
-                transition={{ duration: 0.3 }}
-              />
+              Get Started
             </motion.a>
             <motion.a
               href="mailto:contact@humanbrand.ai"
-              whileHover={{ 
-                scale: 1.1, 
-                y: -4,
-                backgroundColor: '#3175D4',
-                color: 'white',
-                borderColor: '#3175D4'
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border-2 border-celtic-blue text-celtic-blue rounded-md transition-all font-semibold text-lg relative overflow-hidden group"
+              whileHover={{ opacity: 0.9 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-8 py-4 border border-border text-primary rounded-sm transition-all font-semibold text-lg"
             >
-              <span className="relative z-10">Schedule a Call</span>
-              <motion.div
-                className="absolute inset-0 bg-celtic-blue"
-                initial={{ scaleX: 0 }}
-                whileHover={{ scaleX: 1 }}
-                transition={{ duration: 0.3 }}
-                style={{ transformOrigin: 'left' }}
-              />
+              Schedule a Call
             </motion.a>
           </motion.div>
         </motion.div>

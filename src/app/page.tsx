@@ -8,9 +8,7 @@ import SectionProgress from '@/components/SectionProgress';
 
 export default function Home() {
   return (
-    <main className="relative">
-      {/* Navbar Spacer */}
-      <div className="h-16" />
+    <main className="relative z-10 mt-20">
       
       <Hero />
       <ProblemSection />

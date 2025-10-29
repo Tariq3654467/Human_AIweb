@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function BenefitsHero() {
   return (
-    <section className="dark-section py-20 relative overflow-hidden">
+    <section className="bg-white py-20 relative overflow-hidden">
       {/* Background Image - data analytics visualization */}
       <div 
         className="absolute inset-0 opacity-12"
@@ -16,8 +16,8 @@ export default function BenefitsHero() {
         }}
       />
       
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/65" />
+      {/* Light overlay for white design */}
+      <div className="absolute inset-0 bg-white/70" />
       
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <motion.div
@@ -26,10 +26,10 @@ export default function BenefitsHero() {
           transition={{ duration: 0.6 }}
           className="max-w-4xl"
         >
-          <h1 className="text-5xl md:text-6xl font-bold text-off-white mb-6 leading-tight">
-            Who Benefits <span className="text-lime-green">Most</span>
+          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6 leading-tight">
+            Who Benefits <span className="text-secondary">Most</span>
           </h1>
-          <p className="text-xl text-chinese-silver leading-relaxed">
+          <p className="text-xl text-secondary leading-relaxed">
             Built for Leaders Winning in the Era of Human-AI Collaboration
           </p>
         </motion.div>

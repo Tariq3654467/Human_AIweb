@@ -6,7 +6,7 @@ import Phase4 from '@/components/onboarding/Phase4';
 
 export default function OnboardingPage() {
   return (
-    <main className="mt-16">
+    <main className="mt-20 relative z-10">
       <OnboardingHero />
       <Phase1 />
       <Phase2 />

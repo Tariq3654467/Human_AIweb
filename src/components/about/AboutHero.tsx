@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function AboutHero() {
   return (
-    <section className="dark-section py-20 relative overflow-hidden">
+    <section className="bg-white py-20 relative overflow-hidden">
       {/* Background Image - professional team collaboration */}
       <div 
         className="absolute inset-0 opacity-12"
@@ -16,8 +16,8 @@ export default function AboutHero() {
         }}
       />
       
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/65" />
+      {/* Light overlay for white design */}
+      <div className="absolute inset-0 bg-white/70" />
       
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <motion.div
@@ -26,10 +26,10 @@ export default function AboutHero() {
           transition={{ duration: 0.6 }}
           className="max-w-4xl"
         >
-          <h1 className="text-5xl md:text-6xl font-bold text-off-white mb-6 leading-tight">
-            About <span className="text-lime-green">Us</span>
+          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6 leading-tight">
+            About <span className="text-secondary">Us</span>
           </h1>
-          <p className="text-xl text-chinese-silver leading-relaxed">
+          <p className="text-xl text-secondary leading-relaxed">
             Empowering Brand Leaders to Win in the Era of Human-AI Collaboration
           </p>
         </motion.div>

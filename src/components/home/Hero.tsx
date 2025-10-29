@@ -8,10 +8,33 @@ import { StaggeredText, GradientText } from '@/components/FloatingText';
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoReady, setIsVideoReady] = useState(false);
+  const [videoError, setVideoError] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+
+    // Handle video errors
+    const handleError = (e: Event) => {
+      console.error('Video error:', e);
+      setVideoError(true);
+    };
+
+    // Ensure video is loaded and ready
+    const handleLoadedData = () => {
+      setIsVideoReady(true);
+      // Try to play after loaded
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((err) => {
+          console.warn('Video play prevented:', err);
+        });
+      }
+    };
+
+    const handleCanPlay = () => {
+      setIsVideoReady(true);
+    };
 
     // Try to play the video immediately
     const playPromise = video.play();
@@ -20,82 +43,101 @@ export default function Hero() {
         .then(() => {
           setIsVideoReady(true);
         })
-        .catch(() => {
-          // Auto-play was prevented, handle it silently
+        .catch((err) => {
+          console.warn('Auto-play prevented:', err);
         });
     }
 
-    // Ensure video is loaded and ready
-    const handleLoadedData = () => {
-      setIsVideoReady(true);
-    };
-
     video.addEventListener('loadeddata', handleLoadedData);
+    video.addEventListener('canplay', handleCanPlay);
+    video.addEventListener('error', handleError);
     
     return () => {
       video.removeEventListener('loadeddata', handleLoadedData);
+      video.removeEventListener('canplay', handleCanPlay);
+      video.removeEventListener('error', handleError);
     };
   }, []);
 
   return (
-    <section className="dark-section min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Video */}
+    <section className="dots-background min-h-screen flex items-center justify-center relative overflow-hidden bg-white">
+      {/* Background Video - preserved */}
       <div className="absolute inset-0 w-full h-full z-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="w-full h-full object-cover"
-          style={{ 
-            minHeight: '100%',
-            minWidth: '100%',
-            objectFit: 'cover' 
-          }}
-        >
-          <source src="/videos/video1.mp4" type="video/mp4" />
-        </video>
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/60" />
+        {!videoError ? (
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="w-full h-full object-cover absolute inset-0"
+            style={{ 
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              opacity: isVideoReady ? 1 : 0.3,
+              transition: 'opacity 0.8s ease-in'
+            }}
+            onError={(e) => {
+              console.error('Video failed to load:', e);
+              setVideoError(true);
+            }}
+            onLoadedData={() => {
+              setIsVideoReady(true);
+            }}
+            onLoadedMetadata={() => {
+              setIsVideoReady(true);
+            }}
+            onCanPlay={() => {
+              setIsVideoReady(true);
+            }}
+          >
+            <source src="/videos/video1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-gray-900 via-black to-gray-900 absolute inset-0" />
+        )}
+        {/* Light overlay for white design */}
+        <div className="absolute inset-0 bg-white/40" />
       </div>
-      
+
       {/* Content */}
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 py-20 relative z-10 text-center">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-32 relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-5xl"
         >
           <motion.h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 sm:mb-8 leading-tight"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-primary mb-8 sm:mb-12 leading-[1.1] tracking-tighter"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="block">
+            <div className="block mb-4">
               <StaggeredText 
                 text="AI-Powered Brand OS" 
-                className="text-white inline-block"
+                className="text-primary inline-block"
                 delay={0.3}
               />
             </div>
             <motion.div 
-              className="block mt-2 sm:mt-4"
+              className="block"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              <GradientText className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold inline-block">
+              <span className="text-primary inline-block">
                 Data-Driven Command
-              </GradientText>
+              </span>
             </motion.div>
           </motion.h1>
           
           <motion.p 
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto px-4"
+            className="text-lg sm:text-xl md:text-2xl text-secondary mb-12 sm:mb-16 leading-relaxed max-w-4xl font-normal"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -104,7 +146,7 @@ export default function Hero() {
           </motion.p>
           
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
@@ -112,40 +154,23 @@ export default function Hero() {
             <motion.a
               href="#contact"
               whileHover={{ 
-                scale: 1.05, 
-                y: -2,
+                opacity: 0.9,
+                scale: 1.02,
               }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 sm:px-8 py-2.5 sm:py-3 text-white transition-all font-medium text-base sm:text-lg hover:text-lime-green w-full sm:w-auto text-center"
+              whileTap={{ scale: 0.98 }}
+              className="px-8 py-4 bg-black text-white transition-all font-medium text-lg hover:opacity-90 inline-block"
             >
               Get Started
             </motion.a>
             <motion.a
               href="#contact"
               whileHover={{ 
-                scale: 1.05, 
-                y: -2,
-                boxShadow: '0 0 20px rgba(255, 255, 255, 0.3)'
+                opacity: 0.8,
               }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 sm:px-8 py-2.5 sm:py-3 border border-white text-white rounded-sm transition-all font-medium text-base sm:text-lg relative overflow-hidden group w-full sm:w-auto text-center"
+              whileTap={{ scale: 0.98 }}
+              className="px-8 py-4 border border-border text-primary transition-opacity font-medium text-lg inline-block hover:border-black"
             >
-              <span className="relative z-10">Contact Us</span>
-              <motion.div
-                className="absolute inset-0 bg-white"
-                initial={{ scaleX: 0 }}
-                whileHover={{ scaleX: 1 }}
-                transition={{ duration: 0.3 }}
-                style={{ transformOrigin: 'left' }}
-              />
-              <motion.span
-                className="absolute inset-0 text-black flex items-center justify-center"
-                initial={{ opacity: 0 }}
-                whileHover={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-              >
-                Contact Us
-              </motion.span>
+              Learn More
             </motion.a>
           </motion.div>
         </motion.div>
